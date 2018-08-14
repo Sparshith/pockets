@@ -5,16 +5,16 @@
   <title>Pockets</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dosis:400,700,800,600,300">
+  <link rel="stylesheet" type="text/css" href="css/onepage-scroll.css">
   <style>
   body {
-    background: #2f2f2f;
-
+    background: #111;
     font-family: "Dosis", Helvetica, Arial, sans-serif;
   }
   .split {
     height: 100%;
     width: 50%;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     top: 0;
     overflow-x: hidden;
@@ -27,11 +27,28 @@
     background-color: #111;
   }
 
+  .images .left {
+    background-color: #FDFD96;
+  }
+
+  .images .left.split {
+    width: 30%;
+  }
+
   /* Control the right side */
   .right {
     right: 0;
-    background-color: #f2db68;
+    background-color: #FDFD96;
   }
+
+  .images .right.split {
+    width: 70%;
+  }
+
+  .images .right {
+    background-color: #111;
+  }
+
 
   /* If you want the content centered horizontally and vertically */
   .centered {
@@ -53,9 +70,119 @@
   }
 
   h2 {
-    color: #FF5733;
+    color: #FDFD96;
     font-size: 30px;
   }
+
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: #FDFD96;
+    font-size: 29px;
+    color: #2d2d2d;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    letter-spacing: 1.5px;
+    width: 100%;
+    font-weight: bold;
+  }
+
+  .text .description {
+    padding-left: 40px;
+    padding-right: 40px; 
+    color: #fefefe;
+    font-size: 14px !important;
+  }
+
+  /* 
+  // 12 - CSS3 Blockquote Effects Demo
+  // Made with ❤ by @Pawan_Mall
+  // http://www.pawanmall.net 
+  */
+
+  blockquote{
+    display:block;
+    background: #fff;
+    padding: 15px 20px 5px 45px;
+    margin: 0 0 10px;
+    position: relative;
+    
+    /*Font*/
+    font-size: 14px;
+    line-height: 1.2;
+    color: #666;
+
+    /*Borders - (Optional)*/
+    border-left-style: solid;
+    border-left-width: 15px;
+    border-right-style: solid;
+    border-right-width: 2px;    
+  }
+
+  blockquote::before{
+    content: "\201C"; /*Unicode for Left Double Quote*/
+    
+    /*Font*/
+    font-size: 60px;
+    font-weight: bold;
+    color: #999;
+    
+    /*Positioning*/
+    position: absolute;
+    left: 10px;
+    top:5px;
+    
+  }
+
+  blockquote::after{
+    /*Reset to make sure*/
+    content: "";
+  }
+
+  blockquote a{
+    text-decoration: none;
+    background: #eee;
+    cursor: pointer;
+    padding: 0 3px;
+    color: #c76c0c;
+  }
+
+  blockquote a:hover{
+   color: #666;
+  }
+
+  blockquote em{
+    font-style: italic;
+  }
+
+  /*Sunflower Color Palette*/
+  blockquote.sunflower{
+    border-left-color: #ffcd69;
+    border-right-color: #f6ba59;
+  }
+
+  code {
+    color:#da4453;
+  }
+
+  span.Csunflower{
+    color:#f6ba59;
+  }
+
+  a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  a:hover{
+    text-decoration: none;
+    color: #cb202d;
+  }
+
+  .images .right img {
+    height: 250px;
+  }
+
   </style>
 
 
@@ -63,84 +190,174 @@
 <script src="https://code.highcharts.com/highcharts-3d.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
-
-
 </head>
 
 <body>
-  <div class="split left">
-    <div class="centered">
-      <div class="pants" style="margin-bottom: 10px;">
-        <h2>Pants</h2>
-        <div style="margin-bottom: 5px;">
-          <img src="assets/pants-woman.svg" class="svgIcon" alt="">
-          <img src="assets/pants-woman.svg" class="svgIcon" alt="">
-          <img src="assets/pants-woman.svg" class="svgIcon" alt="">
-          <img src="assets/pants-woman.svg" class="svgIcon" alt="">
-          <img src="assets/pants-woman.svg" class="svgIcon" alt="">
-          <img src="assets/pants.svg" class="svgIcon" alt="">
-          <img src="assets/pants.svg" class="svgIcon" alt="">
-          <img src="assets/pants.svg" class="svgIcon" alt="">
-          <img src="assets/pants.svg" class="svgIcon" alt="">
-          <img src="assets/pants.svg" class="svgIcon" alt="">
-        </div>
-        <div>
-          <img src="assets/pants-man.svg" class="svgIcon" alt="">
-          <img src="assets/pants-man.svg" class="svgIcon" alt="">
-          <img src="assets/pants-man.svg" class="svgIcon" alt="">
-          <img src="assets/pants-man.svg" class="svgIcon" alt="">
-          <img src="assets/pants-man.svg" class="svgIcon" alt="">
-          <img src="assets/pants-man.svg" class="svgIcon" alt="">
-          <img src="assets/pants-man.svg" class="svgIcon" alt="">
-          <img src="assets/pants-man.svg" class="svgIcon" alt="">
-          <img src="assets/pants-man.svg" class="svgIcon" alt="">
-          <img src="assets/pants-man.svg" class="svgIcon" alt="">
-        </div>
-      </div>
-      <div class="skirts" style="margin-bottom: 10px;">
-        <h2>Skirts</h2>
-        <div style="margin-bottom: 5px;">
-          <img src="assets/skirt-woman.svg" class="svgIcon" alt="">
-          <img src="assets/skirt.svg" class="svgIcon" alt="">
-          <img src="assets/skirt.svg" class="svgIcon" alt="">
-          <img src="assets/skirt.svg" class="svgIcon" alt="">
-          <img src="assets/skirt.svg" class="svgIcon" alt="">
-          <img src="assets/skirt.svg" class="svgIcon" alt="">
-          <img src="assets/skirt.svg" class="svgIcon" alt="">
-          <img src="assets/skirt.svg" class="svgIcon" alt="">
-          <img src="assets/skirt.svg" class="svgIcon" alt="">
-          <img src="assets/skirt.svg" class="svgIcon" alt="">
-        </div>
-      </div>
-      <div class="dresses">
-        <h2>Dresses</h2>
-        <div style="margin-bottom: 5px;">
-          <img src="assets/dress-woman.svg" class="svgIcon" alt="">
-          <img src="assets/dress.svg" class="svgIcon" alt="">
-          <img src="assets/dress.svg" class="svgIcon" alt="">
-          <img src="assets/dress.svg" class="svgIcon" alt="">
-          <img src="assets/dress.svg" class="svgIcon" alt="">
-          <img src="assets/dress.svg" class="svgIcon" alt="">
-          <img src="assets/dress.svg" class="svgIcon" alt="">
-          <img src="assets/dress.svg" class="svgIcon" alt="">
-          <img src="assets/dress.svg" class="svgIcon" alt="">
-          <img src="assets/dress.svg" class="svgIcon" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="main">
+    <section class="text">
+      <div class="header"> Unpocketable: The Great Clothing Gender Divide </div>
+      <div class="description">
+        <blockquote class="sunflower">
+        <p>  
+          Another impulse fished in a convenient pocket for change-instantly, automatically, bringing forth a nickel for the conductor and a penny for the newsboy. These pockets came as a revelation. Of course she had known they were there, had counted them, made fun of them, mended them, even envied them; but she never had dreamed of how it felt to have pockets. Behind her newspaper she let her consciousness, that odd mingled consciousness, rove from pocket to pocket, realizing the armored assurance of having all those things at hand, instantly get-at-able, ready to meet emergencies . . .
+        </p>
+        <p>
+          Charlotte Perkins Gilman, "If I Were a Man (1914)
+        </p>
+        </blockquote>
+        <p>
+          Written in 1914, Charlotte’s dream of having everyday-use things “at hand, instantly get-at-able, ready to meet emergencies” still feels like a dream today, as I write this over a century later. As a woman, most of my clothing still has no pockets, and if it rarely does, the pockets are too small to carry anything meaningful. Often, there are “fake” pockets in my clothing - patches of cloth sewed shut on clothes as ornamentation, as opposed to utility. On the other hand, men’s clothing almost always has visible, large pockets to carry their everyday belongings. (I use the gender binary here regrettably and consciously to reflect the binary nature of mainstream clothing in the market.) 
+        </p>
+        <blockquote class="sunflower">
+          <p> Men have pockets to keep things in, women for decoration. </p>
+          <p> Christian Dior (1954) as quoted by Paul Johnson, The Spectator, 2011 </p>
+       </blockquote>
+        <p>
+          What this really means is that pockets reinforce the same gender roles that we see all around us - that men do work that requires them to have utility built into their clothing, while a woman’s primary role is to look beautiful.
+        </p>
 
-  <div class="split right">
-    <div class="centered">
-      <div id="chart" style="height: 500px"></div>
-    </div>
+        <p>
+          Now forward to the 21st Century, and women’s clothing has got some pockets, but as others have pointed out, they still won’t fit an iPhone. I thought I’d check for myself. I went around with a collection of daily-use objects of various sizes (wallet, phone, ring, power bank, card holder, earphones, keys, watch) and asked random passersby to check which / how many of these objects most comfortably fit into the clothing they had on then. I noticed that while most men’s pockets could fit in multiple objects, most women’s clothing either did not have pockets, and if they did, could fit in the smaller objects only. On the next screen are images from a small sample of this experiment.
+        </p>
+
+        <p>
+          I thought I’d dig a bit deeper, so I logged onto two popular online shopping portals (Ajio and Myntra) and looked through the top 50 results for men’s trousers, women’s trousers, women’s dresses, and women’s skirts. I noticed that clothing such as trousers which are sold for both men and women are more likely to have pockets than clothing styles specific to women, such as dresses and skirts. On the last screen are graphs showing the gender distribution noticed in these results.
+        </p>
+
+        <p>
+          Sizable pockets are necessities in everyday clothing, especially with the rapidly changing pace of mobile technologies and with it, increasing phone sizes. As Chelsea G. Summers argues, pockets are private, secret spaces we carry into the public - the less we can carry in them, the lesser freedom we have to navigate these public spaces. The great clothing gender divide in pockets (or the absence of them) is hence, not only sexist, but also political.
+        </p>
+
+        <p>
+          References
+          <ul>
+          <li> Gilman, C. (1914). If I Were a Man [Ebook] (pp. 1-2). Retrieved from <a href="http://wps.prenhall.com/wps/media/objects/107/110026/ch18_a2_d2.pdf"> http://wps.prenhall.com/wps/media/objects/107/110026/ch18_a2_d2.pdf </a> </li>
+
+          <li>Johnson, P. (2011). The power of a pocket | The Spectator. Retrieved from <a href="https://www.spectator.co.uk/2011/06/the-power-of-a-pocket/"> https://www.spectator.co.uk/2011/06/the-power-of-a-pocket/ </a> </li>
+
+          <li>Summers, C. (2016). The Sexist, Political History of Pockets. Retrieved from <a href = https://www.racked.com/2016/9/19/12865560/politics-of-pockets-suffragettes-women > https://www.racked.com/2016/9/19/12865560/politics-of-pockets-suffragettes-women </a></li>
+        </p>
+      </div>
+    </section>
+    <section class="images">
+      <div class="split left">
+        <div class="centered">
+          <img src="images/objects.jpg" style="height: 546px;" alt="">
+        </div>
+      </div>
+
+      <div class="split right">
+        <div style="position: relative;left: 10%;top:10%;">
+          <div style="padding-bottom: 20px">
+            <img src="images/woman1.jpg" alt="">
+            <img src="images/woman2.jpg" alt="">
+            <img src="images/woman3.jpg" alt="">
+            <img src="images/woman4.jpg" alt="">
+            <img src="images/woman5.jpg" alt="">
+          </div>
+          <div>
+            <img src="images/man1.jpg" alt="">
+            <img src="images/man2.jpg" alt="">
+            <img src="images/man3.jpg" alt="">
+            <img src="images/man4.jpg" alt="">
+            <img src="images/man5.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="data">
+      <div class="split left">
+        <div class="centered">
+          <div class="pants" style="margin-bottom: 10px;">
+            <h2>Pants</h2>
+            <div style="margin-bottom: 5px;">
+              <img src="assets/pants-woman.svg" class="svgIcon" alt="">
+              <img src="assets/pants-woman.svg" class="svgIcon" alt="">
+              <img src="assets/pants-woman.svg" class="svgIcon" alt="">
+              <img src="assets/pants-woman.svg" class="svgIcon" alt="">
+              <img src="assets/pants-woman.svg" class="svgIcon" alt="">
+              <img src="assets/pants.svg" class="svgIcon" alt="">
+              <img src="assets/pants.svg" class="svgIcon" alt="">
+              <img src="assets/pants.svg" class="svgIcon" alt="">
+              <img src="assets/pants.svg" class="svgIcon" alt="">
+              <img src="assets/pants.svg" class="svgIcon" alt="">
+            </div>
+            <div>
+              <img src="assets/pants-man.svg" class="svgIcon" alt="">
+              <img src="assets/pants-man.svg" class="svgIcon" alt="">
+              <img src="assets/pants-man.svg" class="svgIcon" alt="">
+              <img src="assets/pants-man.svg" class="svgIcon" alt="">
+              <img src="assets/pants-man.svg" class="svgIcon" alt="">
+              <img src="assets/pants-man.svg" class="svgIcon" alt="">
+              <img src="assets/pants-man.svg" class="svgIcon" alt="">
+              <img src="assets/pants-man.svg" class="svgIcon" alt="">
+              <img src="assets/pants-man.svg" class="svgIcon" alt="">
+              <img src="assets/pants-man.svg" class="svgIcon" alt="">
+            </div>
+          </div>
+          <div class="skirts" style="margin-bottom: 10px;">
+            <h2>Skirts</h2>
+            <div style="margin-bottom: 5px;">
+              <img src="assets/skirt-woman.svg" class="svgIcon" alt="">
+              <img src="assets/skirt.svg" class="svgIcon" alt="">
+              <img src="assets/skirt.svg" class="svgIcon" alt="">
+              <img src="assets/skirt.svg" class="svgIcon" alt="">
+              <img src="assets/skirt.svg" class="svgIcon" alt="">
+              <img src="assets/skirt.svg" class="svgIcon" alt="">
+              <img src="assets/skirt.svg" class="svgIcon" alt="">
+              <img src="assets/skirt.svg" class="svgIcon" alt="">
+              <img src="assets/skirt.svg" class="svgIcon" alt="">
+              <img src="assets/skirt.svg" class="svgIcon" alt="">
+            </div>
+          </div>
+          <div class="dresses">
+            <h2>Dresses</h2>
+            <div style="margin-bottom: 5px;">
+              <img src="assets/dress-woman.svg" class="svgIcon" alt="">
+              <img src="assets/dress.svg" class="svgIcon" alt="">
+              <img src="assets/dress.svg" class="svgIcon" alt="">
+              <img src="assets/dress.svg" class="svgIcon" alt="">
+              <img src="assets/dress.svg" class="svgIcon" alt="">
+              <img src="assets/dress.svg" class="svgIcon" alt="">
+              <img src="assets/dress.svg" class="svgIcon" alt="">
+              <img src="assets/dress.svg" class="svgIcon" alt="">
+              <img src="assets/dress.svg" class="svgIcon" alt="">
+              <img src="assets/dress.svg" class="svgIcon" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="split right">
+        <div class="centered">
+          <div id="chart" style="height: 500px"></div>
+        </div>
+      </div>
+    </section>
   </div>
 </body>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/jquery.onepage-scroll.min.js"></script>
 <script type="text/javascript">
 
+$(".main").onepage_scroll({
+   sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
+   easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
+                                    // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
+   animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
+   pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
+   updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
+   beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
+   afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
+   loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+   keyboard: true,                  // You can activate the keyboard controls
+   responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
+                                    // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
+                                    // the browser's width is less than 600, the fallback will kick in.
+   direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
+});
 
 Highcharts.chart('chart', {
     chart: {
@@ -195,25 +412,25 @@ Highcharts.chart('chart', {
         name: 'Pockets - women',
         data: [43, 12, 9],
         stack: 'Women',
-        color: '#FF007F'
+        color: '#ffb6c1'
     }, {
         showInLegend: false,
         name: 'No pockets - women',
         data: [47, 78, 81],
         stack: 'Women',
-        color: '#2d2d2d'
+        color: '#f4f1d6'
     }, {
         showInLegend: false,
         name: 'Pockets - men',
         data: [90, null, null],
         stack: 'Men',
-        color: '#1600FF'
+        color: '#779ecb'
     }, {
         showInLegend: false,
         name: 'No pockets - men',
         data: [0, null, null],
         stack: 'Men',
-        color: '#2d2d2d'
+        color: '#f4f1d6'
     }]
 });
 
