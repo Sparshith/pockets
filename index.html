@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pockets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dosis:400,700,800,600,300">
+  <style>
+  body {
+    background: #2f2f2f;
+
+    font-family: "Dosis", Helvetica, Arial, sans-serif;
+  }
+  .split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  /* Control the left side */
+  .left {
+    left: 0;
+    background-color: #111;
+  }
+
+  /* Control the right side */
+  .right {
+    right: 0;
+    background-color: #f2db68;
+  }
+
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .svgIcon {
+    width: 32px;
+    height: 32px;
+    float: left;
+  }
+
+  div {
+    display: inline-block;
+  }
+
+  h2 {
+    color: #FF5733;
+    font-size: 30px;
+  }
+  </style>
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+
+</head>
+
+<body>
+  <div class="split left">
+    <div class="centered">
+      <div class="pants" style="margin-bottom: 10px;">
+        <h2>Pants</h2>
+        <div style="margin-bottom: 5px;">
+          <img src="assets/pants-woman.svg" class="svgIcon" alt="">
+          <img src="assets/pants-woman.svg" class="svgIcon" alt="">
+          <img src="assets/pants-woman.svg" class="svgIcon" alt="">
+          <img src="assets/pants-woman.svg" class="svgIcon" alt="">
+          <img src="assets/pants-woman.svg" class="svgIcon" alt="">
+          <img src="assets/pants.svg" class="svgIcon" alt="">
+          <img src="assets/pants.svg" class="svgIcon" alt="">
+          <img src="assets/pants.svg" class="svgIcon" alt="">
+          <img src="assets/pants.svg" class="svgIcon" alt="">
+          <img src="assets/pants.svg" class="svgIcon" alt="">
+        </div>
+        <div>
+          <img src="assets/pants-man.svg" class="svgIcon" alt="">
+          <img src="assets/pants-man.svg" class="svgIcon" alt="">
+          <img src="assets/pants-man.svg" class="svgIcon" alt="">
+          <img src="assets/pants-man.svg" class="svgIcon" alt="">
+          <img src="assets/pants-man.svg" class="svgIcon" alt="">
+          <img src="assets/pants-man.svg" class="svgIcon" alt="">
+          <img src="assets/pants-man.svg" class="svgIcon" alt="">
+          <img src="assets/pants-man.svg" class="svgIcon" alt="">
+          <img src="assets/pants-man.svg" class="svgIcon" alt="">
+          <img src="assets/pants-man.svg" class="svgIcon" alt="">
+        </div>
+      </div>
+      <div class="skirts" style="margin-bottom: 10px;">
+        <h2>Skirts</h2>
+        <div style="margin-bottom: 5px;">
+          <img src="assets/skirt-woman.svg" class="svgIcon" alt="">
+          <img src="assets/skirt.svg" class="svgIcon" alt="">
+          <img src="assets/skirt.svg" class="svgIcon" alt="">
+          <img src="assets/skirt.svg" class="svgIcon" alt="">
+          <img src="assets/skirt.svg" class="svgIcon" alt="">
+          <img src="assets/skirt.svg" class="svgIcon" alt="">
+          <img src="assets/skirt.svg" class="svgIcon" alt="">
+          <img src="assets/skirt.svg" class="svgIcon" alt="">
+          <img src="assets/skirt.svg" class="svgIcon" alt="">
+          <img src="assets/skirt.svg" class="svgIcon" alt="">
+        </div>
+      </div>
+      <div class="dresses">
+        <h2>Dresses</h2>
+        <div style="margin-bottom: 5px;">
+          <img src="assets/dress-woman.svg" class="svgIcon" alt="">
+          <img src="assets/dress.svg" class="svgIcon" alt="">
+          <img src="assets/dress.svg" class="svgIcon" alt="">
+          <img src="assets/dress.svg" class="svgIcon" alt="">
+          <img src="assets/dress.svg" class="svgIcon" alt="">
+          <img src="assets/dress.svg" class="svgIcon" alt="">
+          <img src="assets/dress.svg" class="svgIcon" alt="">
+          <img src="assets/dress.svg" class="svgIcon" alt="">
+          <img src="assets/dress.svg" class="svgIcon" alt="">
+          <img src="assets/dress.svg" class="svgIcon" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="split right">
+    <div class="centered">
+      <div id="chart" style="height: 500px"></div>
+    </div>
+  </div>
+</body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+Highcharts.chart('chart', {
+    chart: {
+        backgroundColor: null,
+        type: 'column',
+        options3d: {
+            enabled: true,
+            alpha: 15,
+            beta: 15,
+            viewDistance: 25,
+            depth: 40
+        }
+    },
+
+    title: {
+        text: 'Pockets distribution, grouped by gender'
+    },
+
+    xAxis: {
+        categories: ['Pants', 'Skirts', 'Dresses'],
+        labels: {
+            skew3d: true,
+            style: {
+                fontSize: '16px'
+            }
+        }
+    },
+
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
+        title: {
+            text: '',
+            skew3d: true
+        }
+    },
+
+    tooltip: {
+        headerFormat: '<b>{point.key}</b><br>',
+        pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
+    },
+
+    plotOptions: {
+        column: {
+            stacking: 'normal',
+            depth: 40
+        }
+    },
+
+    series: [{
+        showInLegend: false,
+        name: 'Pockets - women',
+        data: [43, 12, 9],
+        stack: 'Women',
+        color: '#FF007F'
+    }, {
+        showInLegend: false,
+        name: 'No pockets - women',
+        data: [47, 78, 81],
+        stack: 'Women',
+        color: '#2d2d2d'
+    }, {
+        showInLegend: false,
+        name: 'Pockets - men',
+        data: [90, null, null],
+        stack: 'Men',
+        color: '#1600FF'
+    }, {
+        showInLegend: false,
+        name: 'No pockets - men',
+        data: [0, null, null],
+        stack: 'Men',
+        color: '#2d2d2d'
+    }]
+});
+
+
+
+</script>
